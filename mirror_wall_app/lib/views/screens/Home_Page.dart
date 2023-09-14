@@ -1,8 +1,6 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:mirror_wall_app/utils/routsutils.dart';
-import 'package:mirror_wall_app/views/screens/google_Page.dart';
-import 'package:mirror_wall_app/views/screens/netflix_Page.dart';
 import '../../utils/colorutils.dart';
 import 'package:vertical_card_pager/vertical_card_pager.dart';
 
@@ -15,7 +13,6 @@ class HomePage extends StatelessWidget {
       "NETFLIX",
       "ZEE5",
       "SONY LIVE",
-      "GOOGLE",
       "MX PLAYER",
       "PRIME VIDEO",
       "JIO CINEMA",
@@ -25,7 +22,6 @@ class HomePage extends StatelessWidget {
       MyRoutes.Netflix,
       MyRoutes.Zee5,
       MyRoutes.SonyLive,
-      MyRoutes.Google,
       MyRoutes.MX,
       MyRoutes.Primevideo,
       MyRoutes.jiocinema
@@ -48,13 +44,6 @@ class HomePage extends StatelessWidget {
       Container(
         decoration: BoxDecoration(
             color: Colors.amber.shade900,
-            borderRadius: const BorderRadius.only(
-                bottomRight: Radius.circular(20),
-                topRight: Radius.circular(20))),
-      ),
-      Container(
-        decoration: BoxDecoration(
-            color: Colors.blue.shade900,
             borderRadius: const BorderRadius.only(
                 bottomRight: Radius.circular(20),
                 topRight: Radius.circular(20))),

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mirror_wall_app/controller/fb_Controller.dart';
 import 'package:mirror_wall_app/utils/routsutils.dart';
 import 'package:mirror_wall_app/views/screens/ZEE5_Page.dart';
-import 'package:mirror_wall_app/views/screens/google_Page.dart';
 import 'package:mirror_wall_app/views/screens/jiocinema_Page.dart';
 import 'package:mirror_wall_app/views/screens/netflix_Page.dart';
 import 'package:mirror_wall_app/views/screens/primevideo_Page.dart';
@@ -33,7 +32,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         MyRoutes.home: (context) => HomePage(),
-        MyRoutes.Google: (context) => GooglePage(),
         MyRoutes.Netflix: (context) => NetflixPage(),
         MyRoutes.jiocinema: (context) => JioCinemaPage(),
         MyRoutes.Primevideo: (context) => PrimeVideoPage(),
