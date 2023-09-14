@@ -7,14 +7,8 @@ class NetflixPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text("NETFLIX"),
         backgroundColor: Colors.red,
-        title: Text(
-          "NETFLIX",
-          style: TextStyle(
-            fontSize: 25,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
         centerTitle: true,
       ),
     );

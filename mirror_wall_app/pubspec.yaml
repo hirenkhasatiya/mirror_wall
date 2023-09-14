@@ -49,6 +49,7 @@ dev_dependencies:
   connectivity_plus: any
   provider: any
   vertical_card_pager: any
+  flutter_inappwebview: any
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

@@ -1,7 +1,8 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:mirror_wall_app/utils/routsutils.dart';
-import 'package:mirror_wall_app/views/screens/chrome_Page.dart';
+import 'package:mirror_wall_app/views/screens/google_Page.dart';
+import 'package:mirror_wall_app/views/screens/netflix_Page.dart';
 import '../../utils/colorutils.dart';
 import 'package:vertical_card_pager/vertical_card_pager.dart';
 
@@ -12,39 +13,72 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<String> titles = [
       "NETFLIX",
-      "YELLOW",
-      "BLACK",
-      "CYAN",
-      "BLUE",
-      "GREY",
-      "GREEN",
+      "ZEE5",
+      "SONY LIVE",
+      "GOOGLE",
+      "MX PLAYER",
+      "PRIME VIDEO",
+      "JIO CINEMA",
     ];
 
-    final List Page = [
-      NetflixPage(),
+    List Page = [
+      MyRoutes.Netflix,
+      MyRoutes.Zee5,
+      MyRoutes.SonyLive,
+      MyRoutes.Google,
+      MyRoutes.MX,
+      MyRoutes.Primevideo,
+      MyRoutes.jiocinema
     ];
-
     final List<Widget> images = [
       Container(
-        color: Colors.red,
+        decoration: const BoxDecoration(
+            color: Colors.red,
+            borderRadius: BorderRadius.only(
+                bottomRight: Radius.circular(20),
+                topRight: Radius.circular(20))),
       ),
       Container(
-        color: Colors.yellow,
+        decoration: const BoxDecoration(
+            color: Colors.black,
+            borderRadius: BorderRadius.only(
+                bottomRight: Radius.circular(20),
+                topRight: Radius.circular(20))),
       ),
       Container(
-        color: Colors.black,
+        decoration: BoxDecoration(
+            color: Colors.amber.shade900,
+            borderRadius: const BorderRadius.only(
+                bottomRight: Radius.circular(20),
+                topRight: Radius.circular(20))),
       ),
       Container(
-        color: Colors.cyan,
+        decoration: BoxDecoration(
+            color: Colors.blue.shade900,
+            borderRadius: const BorderRadius.only(
+                bottomRight: Radius.circular(20),
+                topRight: Radius.circular(20))),
       ),
       Container(
-        color: Colors.blue,
+        decoration: const BoxDecoration(
+            color: Colors.blue,
+            borderRadius: BorderRadius.only(
+                bottomRight: Radius.circular(20),
+                topRight: Radius.circular(20))),
       ),
       Container(
-        color: Colors.grey,
+        decoration: BoxDecoration(
+            color: Colors.grey.shade500,
+            borderRadius: const BorderRadius.only(
+                bottomRight: Radius.circular(20),
+                topRight: Radius.circular(20))),
       ),
       Container(
-        color: Colors.green,
+        decoration: const BoxDecoration(
+            color: Colors.pinkAccent,
+            borderRadius: BorderRadius.only(
+                bottomRight: Radius.circular(20),
+                topRight: Radius.circular(20))),
       ),
     ];
 
@@ -69,7 +103,7 @@ class HomePage extends StatelessWidget {
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               if (snapshot.data == ConnectivityResult.none) {
-                return Center(
+                return const Center(
                     child: Image(image: AssetImage("assets/images/error.gif")));
               } else {
                 return Column(
@@ -114,12 +148,11 @@ class HomePage extends StatelessWidget {
                         child: VerticalCardPager(
                             titles: titles, // required
                             images: images, // required
-                            textStyle: TextStyle(
+                            textStyle: const TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
                             onSelectedItem: (index) {
-                              Navigator.of(context).pushNamed(MyRoutes.Netflix,
-                                  arguments: Page[index]);
+                              Navigator.of(context).pushNamed(Page[index]);
                             },
                             initialPage: 3, // optional
                             align: ALIGN.LEFT // optional
